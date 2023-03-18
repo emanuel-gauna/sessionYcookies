@@ -8,7 +8,7 @@ const cookiesColorBody = require("../middlewares/cookiesColorBody");
 /* su indice es: "/" */
 router.get("/" , cookiesColorBody , registerVisited);
 /* su indice es: "/" */
-router.post("/" , visitedValidator , postRegisterVisited);
+router.post("/" , visitedValidator , cookiesColorBody , postRegisterVisited);
 
 router.get("/colorVisited", cookiesColorBody, colorVisited  );
 

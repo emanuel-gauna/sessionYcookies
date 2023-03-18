@@ -17,10 +17,9 @@ module.exports = {
           /* si no hay errores */
             if(errors.isEmpty()){
 
-
                 let visited = req.body;
 
-                req.session.user = {
+                req.session.visited = {
                     name: visited.name,
                     color: visited.color,
                     email: visited.email,
@@ -41,16 +40,16 @@ module.exports = {
 
             res.locals.visited = req.session.visited;
 
-                    /* creando un nuevo usuario */
+                    // creando un nuevo usuario 
                let lastId = 0;
                visiteds.forEach(visited => {
                    if(visited.id > lastId){
                     lastId = visited.id;
                    }
                });
-               /* creando nuevo registro de visita */
+               //creando nuevo registro de visita 
                     let newVisited = {
-                    /* dale el id del ultimo usuario + 1 */
+                    //dale el id del ultimo usuario + 1 
                  id: lastId + 1,
                  name: req.body.name,
                  email: req.body.email,
@@ -73,20 +72,17 @@ module.exports = {
                     old: req.body,
                     session: req.session,
                     
+                    
                 })
             }  
         },
 
     colorVisited: (req,res) =>{
-        res.locals.visited = req.session.visited
-        let colorYName = {
-            name: req.session.name,
-            color: req.session.color,
-        }
-        res.render("colorVisited",{
-            ...colorYName,
-           /*  name: req.session.visited.name, */
-            /* color: req.session.visited.color, */
+        let color = req.session.visited.color;
+        let name = req.session.visited.name;
+        res.render("colorVisited", {
+            color,
+            name,
             session: req.session
             
         });
