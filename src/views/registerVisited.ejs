@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="/css/register.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    rel="stylesheet" /><!-- hojas de estilos de awesome -->
+</head>
+<body class=" <%= locals.visited ? visited.color : null %> ">
+    
+ <section class="register">
+    <h1>registro</h1>
+    
+    <form action="/" method="post" class="form-container" >
+<div class="control-form">
+    <label for="Ingrese su nombre">Ingrese su nombre</label>
+    <input type="text" name="name" placeholder="ingrese su nombre"  minlength="6" value="<%= locals.old && old.name %>">
+    <% if (locals.errors && errors.name) { %>
+        <small class="text-danger"><%= errors.name.msg %> </small>
+    <% } %>
+</div>
+    <div class="control-form">
+        <label for="color">seleccione un color:</label>
+         <select name="color" id="color" >
+            <option value="rojo">rojo</option>
+            <option value="verde">verde</option>
+            <option value="amarillo">amarillo</option>
+            <option value="naranja">naranja</option>
+            <option value="azul">azul</option>  
+         </select>
+</div>
+<div class="form-ad-input_check">
+    <input type="checkbox" name="rememberColor" id="check">
+    <label for="check">Recordar color</label>
+</div>
+<div class="control-form">
+    <label for="">Ingrese su email</label>
+    <input type="email" name="email" placeholder=" ingrese su E-mail" value="<%= locals.old && old.email %>" >
+    <% if (locals.errors && errors.email) { %>
+        <small class="text-danger"><%= errors.email.msg %> </small>
+    <% } %>
+</div>
+<div class="control-form">
+    <label>Ingrese su edad</label>
+    <input type="text" name="edad" placeholder="Ingrese su edad" class="edad" value="<%= locals.old && old.edad %>">
+    <% if (locals.errors && errors.edad) { %>
+        <small class="text-danger"><%= errors.edad.msg %> </small>
+    <% } %>
+    <button type="submit" name="enviar" class="button-form"></a>Enviar</button>
+</form>
+</section>
+
+</body>
+</html>

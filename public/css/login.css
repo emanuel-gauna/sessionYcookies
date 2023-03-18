@@ -1,0 +1,71 @@
+@import url(styles.css) ;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body{
+    font-family: "roboto";
+    font-size: 24px;
+    background-color: aliceblue;
+}
+body.verde{
+    background-color: green;
+}
+body.amarillo{
+    background-color: yellow;
+}
+body.rojo{
+    background-color: red;
+}
+body.azul{
+    background-color: blue;
+}
+body.naranja{
+    background-color: orange;
+}
+
+
+
+section.login{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    background-color: slategrey;
+}
+label{
+    margin-bottom: 5px;
+    font-style: italic;
+    display: block;
+}
+form.form-container{
+    padding: 20px 15px;
+}
+input{
+    display: block;
+    width: 100%;
+    padding: 8px 8px;
+    border-radius: 5px;
+}
+div.control-form{
+    margin-bottom: 15px;
+}
+.button-form{
+    background-color: blue ;
+    border: none;
+    font-size: 20px ;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+/* 
+
+
+.control{
+   
+}
+ */

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+    rel="stylesheet" /><!-- hojas de estilos de awesome -->
+</head>
+<body class="<%= locals.visited  ? visited.color :  null %>">
+    <h1> hola <%= name %>, elegiste el color: <%= color %> , tu email es: <%= email %>
+        y tu edad es: <%= edad %></h1>
+    <form action="/colorVisited/" method="get" class="form-container">
+        <button type="submit" name="enviar" value="enviar" class="button-form">Enviar</button>
+
+    </form>
+    </section>
+   
+</body>
+</html>
